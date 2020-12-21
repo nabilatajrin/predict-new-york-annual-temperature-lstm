@@ -14,7 +14,6 @@ df = pd.read_csv('NY.csv')
 TAVG = np.array([df.iloc[:, 6]])
 TMAX = np.array([df.iloc[:, 5]])
 TMIN = np.array([df.iloc[:, 4]])
-
 print(TAVG)
 
 fig = plt.figure(1)
@@ -46,7 +45,6 @@ model.compile(loss='mean_squared_error', optimizer='rmsprop', metrics=[metrics.m
 model.fit(X_train, Y_train, epochs=50, verbose=2)
 
 predict = model.predict(X_test)
-
 plt.figure(2)
 plt.scatter(Y_test, predict)
 #plt.savefig(block=False)
